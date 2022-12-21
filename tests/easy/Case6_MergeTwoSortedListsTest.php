@@ -12,7 +12,7 @@
 
 class ListNode
 {
-    public function __construct(public $val = 0, public $next = null)
+    public function __construct(public int|null $val = 0, public null|ListNode $next = null)
     {
     }
 }
@@ -46,7 +46,7 @@ function mergeTwoList(ListNode $list1, ListNode $list2): ListNode
     return $newList->next;
 }
 
-test('easy two sum', function ($list1, $list2, $result) {
+test('case 6 merge two sorted lists', function ($list1, $list2, $result) {
     $fnResult = mergeTwoList($list1, $list2);
     $testResult = [];
     if ($fnResult->next->val !== null) {
@@ -82,5 +82,4 @@ test('easy two sum', function ($list1, $list2, $result) {
             new ListNode(0),
             [0]
         ],
-
     ]);

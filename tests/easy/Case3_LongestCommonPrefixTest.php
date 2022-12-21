@@ -33,7 +33,7 @@ function longestCommonPrefix(array $stringsArray)
     return $result;
 }
 
-test('easy longest common prefix', function ($strings, $result) {
+test('case 3 longest common prefix', function ($strings, $result) {
     expect(longestCommonPrefix($strings))->toEqual($result);
 })
     ->with([

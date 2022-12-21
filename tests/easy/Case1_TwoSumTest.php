@@ -23,7 +23,7 @@ function twoSum(array $nums, int $target): array
     return [];
 }
 
-test('easy two sum', function ($nums, $target, $result) {
+test('case 1 two sum', function ($nums, $target, $result) {
     expect(array_diff(twoSum($nums, $target), $result))->toEqual([]);
 })
     ->with([

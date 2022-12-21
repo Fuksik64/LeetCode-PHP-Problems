@@ -58,7 +58,7 @@ function romanToInt($s)
 }
 
 
-test('easy roman to int', function ($romanNumber, $result) {
+test('case 2 roman to int', function ($romanNumber, $result) {
     expect(romanToInt($romanNumber))->toBe($result);
 })
     ->with([

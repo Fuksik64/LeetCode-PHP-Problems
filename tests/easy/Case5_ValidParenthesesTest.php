@@ -46,7 +46,7 @@ function isValid(string $string): bool
     return count($unclosedTags) === 0;
 }
 
-test('easy two sum', function ($strings, $result) {
+test('case 5 valid parentheses', function ($strings, $result) {
     expect(isValid($strings))->toEqual($result);
 })
     ->with([

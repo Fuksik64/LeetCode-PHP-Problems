@@ -23,7 +23,7 @@ function isPalindrome(int $number): bool
 }
 
 
-test('easy is palindrome', function ($number, $result) {
+test('case 4 is palindrome', function ($number, $result) {
     expect(isPalindrome($number))->toBe($result);
 })
     ->with([
