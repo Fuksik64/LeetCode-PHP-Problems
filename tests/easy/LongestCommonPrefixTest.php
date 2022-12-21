@@ -33,8 +33,8 @@ function longestCommonPrefix(array $stringsArray)
     return $result;
 }
 
-test('easy two sum', function ($strings, $result) {
-    expect(isValid($strings))->toEqual($result);
+test('easy longest common prefix', function ($strings, $result) {
+    expect(longestCommonPrefix($strings))->toEqual($result);
 })
     ->with([
         [["flower", "flow", "flight"], 'fl'],
