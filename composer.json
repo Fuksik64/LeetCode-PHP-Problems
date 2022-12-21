@@ -6,5 +6,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "require": {
+        "larapack/dd": "1.*"
     }
 }
