@@ -14,9 +14,8 @@
 */
 
 
-function removeDuplicates(&$nums):int
+function removeDuplicates(&$nums): int
 {
-    $count = 0;
     $last = null;
     foreach ($nums as $index => $num) {
         if ($num === $last) {
@@ -25,15 +24,14 @@ function removeDuplicates(&$nums):int
         }
 
         $last = $num;
-        ++$count;
     }
 
-    return $count;
+    return count($nums);
 }
 
 test('case 7 remove duplicates from sorted array', function ($array, $result, $k) {
     $resK = removeDuplicates($array);
-    sort($array,SORT_NUMERIC);
+    sort($array, SORT_NUMERIC);
     expect($array)
         ->toEqual($result)
         ->and($resK)
