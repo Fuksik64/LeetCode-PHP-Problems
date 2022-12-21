@@ -32,7 +32,7 @@ function isValid(string $string): bool
     $unclosedTags = [];
     foreach ($separated as $char) {
 
-        if (in_array($char, array_keys($map))) {
+        if (array_key_exists($char, $map)) {
             $unclosedTags[] = $map[$char];
             continue;
         }
