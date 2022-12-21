@@ -14,18 +14,32 @@
 */
 
 
-function removeDuplicates($nums)
-{dd('her');
+function removeDuplicates(&$nums):int
+{
+    $count = 0;
+    $last = null;
+    foreach ($nums as $index => $num) {
+        if ($num === $last) {
+            unset($nums[$index]);
+            continue;
+        }
+
+        $last = $num;
+        ++$count;
+    }
+
+    return $count;
 }
 
 test('case 7 remove duplicates from sorted array', function ($array, $result, $k) {
     $resK = removeDuplicates($array);
+    sort($array,SORT_NUMERIC);
     expect($array)
         ->toEqual($result)
         ->and($resK)
         ->toBe($k);
 })
     ->with([
-        [[1, 1, 2], [1, 2, '_'], 2],
-//        [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4], [0, 1, 2, 3, 4, "_", "_", "_", "_", "_"], 5]
+        [[1, 1, 2], [1, 2], 2],
+        [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4], [0, 1, 2, 3, 4], 5]
     ]);
