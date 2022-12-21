@@ -1,0 +1,15 @@
+name: ✔️ Tests
+on:
+  push:
+    branches: [ main ]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Copy phpunit.xml
+        run: php -r "copy('phpunit.xml', 'phpunit.xml');"
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+      - name: Execute tests via PEST
+        run: ./vendor/bin/pest
